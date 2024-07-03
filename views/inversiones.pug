@@ -1,0 +1,72 @@
+doctype html
+html
+  head
+    title Simulador de Inversiones
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel='stylesheet', href='/css/paginasStyles.css')
+    link(rel='apple-touch-icon' sizes='180x180' href='../images/favicon/apple-touch-icon.png')
+    link(rel='icon' type='image/png' sizes='32x32' href='../images/favicon/favicon-32x32.png')
+    link(rel='icon' type='image/png' sizes='16x16' href='../images/favicon/favicon-16x16.png')
+    link(rel='manifest' href='../images/favicon/site.webmanifest')
+    link(rel='mask-icon' href='../images/favicon/safari-pinned-tab.svg' color='#5bbad5')
+    meta(name='msapplication-TileColor' content='#da532c')
+    meta(name='theme-color' content='#ffffff')
+  body
+    nav
+      ul(class='navbar')
+        .inicio
+          li 
+            a(href="/" class='linknav') Inicio
+          li 
+            a(href="/dashboard" class='linknav') Dashboard 
+
+    .titulo-principal
+      h1 #{title}
+
+    .seccion-principal
+      form#formularioInversion(action="/simular" method="post")
+        .form-group
+          label(for="tipoInversion" class='form-label') Tipo de Inversión:
+          select#tipoInversion(name="tipoInversion" class='form-select')
+            option(value="acciones-individuales") Acciones Individuales
+            option(value="acciones-fondos") Fondos Indexados
+            option(value="bonos-gob") Bonos Gubernamentales
+            option(value="bonos-corp") Bonos Corporativos
+            option(value="propiedad-resi") Propiedades Residenciales
+            option(value="propiedad-comer") Propiedades Comerciales
+            option(value="oro") Oro 
+            option(value="plata") Plata
+            option(value="bitcoin") Bitcoin 
+            option(value="ethereum") Ethereum 
+            option(value="tether") Tether 
+            option(value="fondo-inversion") Fondos de Inversión
+            option(value="cuenta-ahorro") Cuentas de ahorro
+
+        .form-group
+          label(for="montoInicial" class='form-label') Monto Inicial de Inversión: (min $10 MXN)
+          input#montoInicial(type="number" placeholder="Monto mínimo de inversión $10 MXN" value="10" class='form-input' name="montoInicial" step="0.01" min="10" required)
+
+        .form-group
+          label(for="valorEquivalente" class='form-label') Valor Equivalente:
+          input#valorEquivalente(type="text" class='form-input' name="valorEquivalente" readonly)
+
+        .form-group
+          label(for="numAportaciones" class='form-label') Número de Aportaciones mensuales:
+          input#numAportaciones(type="number" class='form-input' name="numAportaciones" step="1" min="0" required)
+
+        .form-group
+          label(for="montoAportaciones" class='form-label') Monto de las Aportaciones: (min $10 MXN)
+          input#montoAportaciones(type="number" placeholder="Monto mínimo de inversión $10 MXN" value="10" class='form-input' name="montoAportaciones" step="0.01" min="10" required)
+
+        .form-group
+          label(for="plazoInversion" class='form-label') Plazo de Inversión en meses:
+
+        .plazo-container
+          input#plazoInversion(type="number" value="1" placeholder="Meses" class='form-input' name="plazoInversion" min="1" required)
+
+        .form-group
+          button(type="submit" class="simular-button") Simular Inversión
+        span *Solamente es una simulación, invertir conlleva riesgos, el mercado puede variar y no se garantiza el rendimiento de la inversión.
+
+    script(src="../js/equivalente.js")

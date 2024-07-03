@@ -1,0 +1,83 @@
+doctype html
+html
+  head
+    title Simulador de Inversiones
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel='stylesheet', href='/css/styles.css')
+    link(rel='apple-touch-icon' sizes='180x180' href='../images/favicon/apple-touch-icon.png')
+    link(rel='icon' type='image/png' sizes='32x32' href='../images/favicon/favicon-32x32.png')
+    link(rel='icon' type='image/png' sizes='16x16' href='../images/favicon/favicon-16x16.png')
+    link(rel='manifest' href='../images/favicon/site.webmanifest')
+    link(rel='mask-icon' href='../images/favicon/safari-pinned-tab.svg' color='#5bbad5')
+    meta(name='msapplication-TileColor' content='#da532c')
+    meta(name='theme-color' content='#ffffff')
+  body
+    nav
+      ul(class='navbar')
+        if !user
+          .inicio
+          .cuentas
+            li
+              a(href='/login' class='linknav') Iniciar Sesión
+            li
+              a(href="/registro" class="linknav registroNav") Registrarse
+      
+        else
+          .inicio
+            li
+              a(href='/inversiones' class='linknav') Nueva Inversión
+            li 
+              a(href='/dashboard' class='linknav') Dashboard
+          .cuentas
+            li
+              a(href='/logout' class='linknav') Cerrar Sesión
+
+    .titulo-principal
+      h1 Simulador de Inversiones
+
+    .seccion 
+      .texto-seccion
+        h2(class='tituloSeccion') ¿Que es una inversion?
+        p(class='normalSeccion') Una inversión es un activo que se adquiere con la esperanza de que genere ingresos o aumente su valor en el futuro. Esta es una de las formas más comunes de poner a trabajar el dinero para ti.
+      
+      .imagen-seccion 
+        img(src="../images/nueva1.jpg", alt="inversion", class='imagenesTexto')
+
+    .seccion-inverso
+      .texto-seccion 
+        h2(class='tituloSeccion') ¿Por qué invertir?
+        p(class='normalSeccion')  Invertir es una oportunidad de hacer negocios y generar ingresos, pero realmente es una forma de alcanzar tus sueños, metas y libertad financiera.
+
+      .imagen-seccion
+        img(src="../images/nueva2.jpg", alt="inversion", class='imagenesTexto')
+
+    .seccion 
+      .texto-seccion
+        h2(class='tituloSeccion') ¿Por qué usar un simulador de inversiones?
+        p(class='normalSeccion') Un simulador de inversiones es una herramienta que te permite probar diferentes estrategias de inversión sin arriesgar tu dinero. Es una forma de aprender a invertir y tomar decisiones financieras más informadas.
+      
+      .imagen-seccion 
+        img(src="../images/nueva3.jpg", alt="inversion", class='imagenesTexto')
+    
+    .seccion-final 
+      .texto-seccion
+        h1(class='tituloSeccion') ¿Listo para empezar a invertir?
+        p(class='normalSeccion') Regístrate y comienza en el mundo de las inversiones.
+        if !user
+          .boton-final
+            a(href="/registro" class="botonFinal") ¡Empezar Ahora!
+        
+        else
+          .boton-final
+            a(href="/dashboard" class="botonFinal") ¡Empezar Ahora!
+    
+      // Se agrega un evento para mostrar el mensaje de error en caso de que exista.
+      script.
+        document.addEventListener("DOMContentLoaded", function() {
+          const params = new URLSearchParams(window.location.search);
+          const error = params.get('error');
+          if (error) {
+              alert(error);
+          }
+        });
