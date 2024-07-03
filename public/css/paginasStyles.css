@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Kanit&family=Playwrite+NZ:wght@100..400&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+.kanit-regular {
+  font-family: "Kanit", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-mono-Roboto Style {
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.noto-sans-Noto Style {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+p, h1 {
+  color: #e8e5e5;
+}
+
+body {
+  font-family: "Noto Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url("../images/fondo4.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+nav {
+  background-color: #222831;
+  padding: 5px 0;
+  position: fixed;
+  width: 100%;
+  margin-top: -80px;
+}
+nav ul {
+  display: flex;
+  padding: 0;
+  list-style-type: none;
+  width: 100%;
+  justify-content: space-between;
+}
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+nav ul li a {
+  display: flex;
+  color: #76ABAE;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 15px;
+  font-size: 20px;
+}
+
+i {
+  vertical-align: middle;
+}
+
+.linknav:hover {
+  opacity: 0.5;
+}
+
+.cuentas {
+  text-align: right;
+}
+
+.registroNav {
+  border: 1px solid #76ABAE;
+  border-radius: 10px;
+}
+
+.titulo-principal {
+  font-family: "Roboto Mono", monospace;
+  font-size: 40px;
+  height: 200px;
+  text-align: center;
+  align-content: center;
+  margin-top: 80px;
+}
+
+.seccion-principal {
+  color: #e8e5e5;
+  background-color: #31363F;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: none;
+  border-radius: 20px;
+  width: 90%;
+}
+
+.form-group {
+  display: flex;
+  justify-content: start;
+  width: 100%;
+  flex-direction: column;
+}
+
+.form-label {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.form-input {
+  width: 97%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #8E7AB5;
+  border-radius: 8px;
+  align-self: center;
+}
+
+.plazo-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 100%;
+  align-items: center;
+}
+
+.form-select {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #8E7AB5;
+  border-radius: 8px;
+  align-self: center;
+}
+
+.form-select-plazo {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #8E7AB5;
+  border-radius: 8px;
+  align-self: center;
+}
+
+.simular-button {
+  padding: 10px;
+  font-size: 20px;
+  background-color: rgb(127, 74, 74);
+  color: #e8e5e5;
+  border: none;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+.simular-button:hover {
+  opacity: 0.8;
+}
+
+/*# sourceMappingURL=paginasStyles.css.map */
