@@ -18,7 +18,7 @@ router.post('/', passport.authenticate('local', {
 
   res.cookie('token', token, { httpOnly: true, secure: false });
 
-  res.redirect('/dashboard');
+  res.redirect('/');
 });
 
 module.exports = router;
