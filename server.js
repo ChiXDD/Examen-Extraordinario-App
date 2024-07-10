@@ -7,13 +7,13 @@ const flash = require('connect-flash');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const SQLiteStore = require('connect-sqlite3')(session);
-const usuarioController = require('./controllers/usuarioController'); // Archivo contenedor de querys para MySQL
+const usuarioController = require('./controllers/usuarioController');
 const dotenv = require('dotenv');
 const cookieParser = require('cookie-parser');
 const authMiddleWare = require('./middlewares/authMiddleware');
 const bodyParser = require('body-parser');
 
-//Configura Cookie Parser
+//Configura Cookie Parser  
 app.use(cookieParser());
 
 app.use(express.json());
